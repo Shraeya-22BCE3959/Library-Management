@@ -15,10 +15,9 @@ function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const API_URL = process.env.REACT_APP_API_URL || 'https://library-management-ms4h.onrender.com';
   const fetchData = async () => {
     try {
-      const { data } = await axios.get(`${API_URL}/logedinuser/`, { withCredentials: true });
+      const { data } = await axios.get(`https://library-management-ms4h.onrender.com/logedinuser/`, { withCredentials: true });
       setUser(data.user);
     } catch (error) {
       // Handle error
